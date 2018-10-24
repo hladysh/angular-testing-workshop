@@ -14,9 +14,29 @@ import { UiToolbarModule } from '@workshop/ui-toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {
+  SimpleComponent,
+  TemplateComponent,
+  ServiceComponent,
+  RemoteComponent,
+  InputOutputComponent,
+  RoutedComponent,
+  IsolatedPipe,
+  AsyncServiceComponent
+} from './examples';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // EXAMPLES
+    SimpleComponent,
+    TemplateComponent,
+    ServiceComponent,
+    RemoteComponent,
+    InputOutputComponent,
+    RoutedComponent,
+    IsolatedPipe,
+    AsyncServiceComponent
   ],
   imports: [
     AppRoutingModule,
@@ -30,7 +50,7 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     UiLoginModule,
     UiToolbarModule,
-    MaterialModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
