@@ -37,7 +37,7 @@ export const selectCurrentProjectId = createSelector(
   fromProjects.getSelectedProjectId
 );
 
-const emptyProject: Project = {
+export const emptyProject: Project = {
   id: null,
   title: '',
   details: '',

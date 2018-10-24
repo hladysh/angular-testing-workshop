@@ -17,13 +17,6 @@ describe('RefactorService', () => {
     service = injector.get(RefactorService);
   });
 
-  // -------------------------------------------------------------------
-  // CHALLENGE:
-  // These will not pass without refactoring the RefactorService
-  // Update refactor.services.ts so that each test passes one by one
-  // -------------------------------------------------------------------
-
-  /*
   it('should call updateProjects and getTotalPercentComplete on reCalculateTotal', () => {
     spyOn(service, 'updateProjects').and.callThrough();
     spyOn(service, 'getTotalPercentComplete').and.callThrough();
@@ -55,7 +48,7 @@ describe('RefactorService', () => {
 
   it('should add a project on addProject', () => {
     let projects = [];
-    const project = {...projectStub, id: null};
+    const project = { ...projectStub, id: null};
 
     expect(projects.length).toBe(0);
 
@@ -66,7 +59,7 @@ describe('RefactorService', () => {
 
   it('should update a project on updateProject', () => {
     let projects = [projectStub];
-    const project = { ...projectStub, title: 'UPDATED', details: 'PROJECT'};
+    const project = {...projectStub, title: 'UPDATED', details: 'PROJECT', percentComplete: 56};
 
     projects = service.updateProject(projects, project);
 
@@ -85,16 +78,16 @@ describe('RefactorService', () => {
   });
 
   it('should get total price on getTotalPercentComplete', () => {
+
     const projects: Project[] = [
       projectStub,
-      {...projectStub, id: '2'},
-      {...projectStub, id: '3'}
+      {...projectStub, id: '2', percentComplete: 20},
+      {...projectStub, id: '3', percentComplete: 30}
+
     ];
 
     const total = service.getTotalPercentComplete(projects);
 
-    expect(total).toBe(600);
+    expect(total).toBe(20);
   });
-  */
-
 });
