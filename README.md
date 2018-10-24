@@ -1,9 +1,7 @@
 # Angular Testing Workshop
-
 For this workshop, we are going to build Jasmine tests around components and NGRX assets.
 
 ## Getting Started
-
 ```
 npm install
 npm start

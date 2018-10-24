@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Project } from '../projects/project.model';
-import { Customer } from '../customers/customer.model';
+import { Project } from '@workshop/core-data';
 
 export enum ProjectsActionTypes {
   ProjectsAction = '[Projects] Action',
@@ -13,10 +12,7 @@ export enum ProjectsActionTypes {
   ProjectUpdated = '[Projects] Data Updated',
   DeleteProject = '[Projects] Delete Data',
   ProjectDeleted = '[Projects] Data Deleted',
-  LoadCustomers = '[Customers] Load Data',
-  CustomersLoaded = '[Customers] Data Loaded',
 }
-
 
 export class Projects implements Action {
   readonly type = ProjectsActionTypes.ProjectsAction;
@@ -67,18 +63,7 @@ export class ProjectDeleted implements Action {
   constructor(public payload: Project) { }
 }
 
-export class LoadCustomers implements Action {
-  readonly type = ProjectsActionTypes.LoadCustomers;
-  constructor() {}
-}
-
-export class CustomersLoaded implements Action {
-  readonly type = ProjectsActionTypes.CustomersLoaded;
-  constructor(public payload: Customer[]) {}
-}
-
-export type ProjectsActions =
-  | Projects
+export type ProjectsActions = Projects
   | ProjectSelected
   | LoadProjects
   | ProjectsLoaded
@@ -88,25 +73,4 @@ export type ProjectsActions =
   | ProjectUpdated
   | DeleteProject
   | ProjectDeleted
-  | LoadCustomers
-  | CustomersLoaded;
-
-export const fromProjectsActions = {
-  Projects,
-  ProjectSelected,
-  LoadProjects,
-  ProjectsLoaded,
-  AddProject,
-  ProjectAdded,
-  UpdateProject,
-  ProjectUpdated,
-  DeleteProject,
-  ProjectDeleted,
-  LoadCustomers,
-  CustomersLoaded
-};
-
-
-
-
-
+;
