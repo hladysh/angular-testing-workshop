@@ -33,7 +33,7 @@ export class CustomersService {
   }
 
   update(customer: Customer) {
-    return this.http.patch(this.getUrl(), customer);
+    return this.http.patch(this.getUrlForId(customer.id), customer);
   }
 
   delete(customer: Customer) {
